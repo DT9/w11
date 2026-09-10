@@ -1,2 +1,12 @@
 #!/bin/sh
-exec powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "$(git rev-parse --show-toplevel)/.profile-git/Audit-ProfileRepo.ps1" -Mode staged
+ROOT=$(git rev-parse --show-toplevel)
+SCRIPT="$ROOT/.profile-git/Audit-ProfileRepo.ps1"
+PATH="$PATH:${HOME}/.local/share/mise/installs/powershell/latest:${HOME}/.local/share/mise/installs/powershell/7.6.5"
+if command -v powershell.exe >/dev/null 2>&1; then
+  exec powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "$SCRIPT" -Mode staged
+fi
+if command -v pwsh >/dev/null 2>&1; then
+  exec pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File "$SCRIPT" -Mode staged
+fi
+echo "powershell.exe or pwsh is required to audit this repository" >&2
+exit 1

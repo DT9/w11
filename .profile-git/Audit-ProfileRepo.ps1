@@ -36,7 +36,7 @@ $retainedFiles = [Collections.Generic.List[string]]::new()
 foreach ($file in $files) {
     $normalized = $file -replace '\\', '/'
     $isForbidden = $false
-    $isApolloTls = ($normalized -match '(?i)^\.config/apollo/credentials/')
+    $isApolloTls = ($normalized -match '(?i)apollo(/config)?/credentials/')
     foreach ($pattern in $forbiddenPaths) {
         if ($isApolloTls -and $pattern -match 'pem') { continue }
         if ($normalized -match $pattern) {

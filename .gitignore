@@ -1,5 +1,4 @@
-# This repository lives at C:\Users\deploy. Deny everything unless a stable,
-# reviewed configuration file is explicitly allowed below.
+# w11.git worktree is C:\. Deny the OS disk unless a reviewed path is allowlisted.
 /*
 !/.gitignore
 !/.gitattributes
@@ -8,56 +7,62 @@
 !/.profile-git/
 !/.profile-git/**
 
-# Scoop preferences and user configurations (.config and dotfiles).
-!/.config/
-!/.config/**
-!/.sff/
-!/.sff/**
+!/Users/
+/Users/*
+!/Users/deploy/
+/Users/deploy/*
 
-# AppData is selective to prevent bloat. Only reviewed application configs are admitted.
-!/AppData/
-/AppData/*
-!/AppData/Local/
-/AppData/Local/*
-!/AppData/Local/FanControl/
-/AppData/Local/FanControl/*
-!/AppData/Local/FanControl/Configurations/
-/AppData/Local/FanControl/Configurations/*
-!/AppData/Local/FanControl/Configurations/userConfig.json
+!/Users/deploy/.config/
+!/Users/deploy/.config/**
+!/Users/deploy/.sff/
+!/Users/deploy/.sff/**
 
-!/AppData/Roaming/
-/AppData/Roaming/*
-!/AppData/Roaming/ludusavi/
-/AppData/Roaming/ludusavi/*
-!/AppData/Roaming/ludusavi/config.yaml
+!/Users/deploy/AppData/
+/Users/deploy/AppData/*
+!/Users/deploy/AppData/Local/
+/Users/deploy/AppData/Local/*
+!/Users/deploy/AppData/Local/FanControl/
+/Users/deploy/AppData/Local/FanControl/*
+!/Users/deploy/AppData/Local/FanControl/Configurations/
+/Users/deploy/AppData/Local/FanControl/Configurations/*
+!/Users/deploy/AppData/Local/FanControl/Configurations/userConfig.json
 
-!/AppData/Roaming/WizTree3/
-/AppData/Roaming/WizTree3/*
-!/AppData/Roaming/WizTree3/WizTree3.ini
+!/Users/deploy/AppData/Roaming/
+/Users/deploy/AppData/Roaming/*
+!/Users/deploy/AppData/Roaming/ludusavi/
+/Users/deploy/AppData/Roaming/ludusavi/*
+!/Users/deploy/AppData/Roaming/ludusavi/config.yaml
 
-!/AppData/Roaming/Notepad++/
-/AppData/Roaming/Notepad++/*
-!/AppData/Roaming/Notepad++/config.xml
-!/AppData/Roaming/Notepad++/contextMenu.xml
-!/AppData/Roaming/Notepad++/langs.xml
-!/AppData/Roaming/Notepad++/shortcuts.xml
-!/AppData/Roaming/Notepad++/stylers.xml
-!/AppData/Roaming/Notepad++/plugins/
-/AppData/Roaming/Notepad++/plugins/*
-!/AppData/Roaming/Notepad++/plugins/Config/
-/AppData/Roaming/Notepad++/plugins/Config/*
-!/AppData/Roaming/Notepad++/plugins/Config/converter.ini
+!/Users/deploy/AppData/Roaming/WizTree3/
+/Users/deploy/AppData/Roaming/WizTree3/*
+!/Users/deploy/AppData/Roaming/WizTree3/WizTree3.ini
 
-!/AppData/Roaming/Playnite/
-/AppData/Roaming/Playnite/*
-!/AppData/Roaming/Playnite/config.json
-!/AppData/Roaming/Playnite/fullscreenConfig.json
-!/AppData/Roaming/Playnite/windowPositions.json
+!/Users/deploy/AppData/Roaming/Notepad++/
+/Users/deploy/AppData/Roaming/Notepad++/*
+!/Users/deploy/AppData/Roaming/Notepad++/config.xml
+!/Users/deploy/AppData/Roaming/Notepad++/contextMenu.xml
+!/Users/deploy/AppData/Roaming/Notepad++/langs.xml
+!/Users/deploy/AppData/Roaming/Notepad++/shortcuts.xml
+!/Users/deploy/AppData/Roaming/Notepad++/stylers.xml
+!/Users/deploy/AppData/Roaming/Notepad++/plugins/
+/Users/deploy/AppData/Roaming/Notepad++/plugins/*
+!/Users/deploy/AppData/Roaming/Notepad++/plugins/Config/
+/Users/deploy/AppData/Roaming/Notepad++/plugins/Config/*
+!/Users/deploy/AppData/Roaming/Notepad++/plugins/Config/converter.ini
+!/Users/deploy/AppData/Roaming/Notepad++/plugins/config/
+/Users/deploy/AppData/Roaming/Notepad++/plugins/config/*
+!/Users/deploy/AppData/Roaming/Notepad++/plugins/config/converter.ini
 
-!/AppData/Roaming/Parsec/
-!/AppData/Roaming/Parsec/**
+!/Users/deploy/AppData/Roaming/Playnite/
+/Users/deploy/AppData/Roaming/Playnite/*
+!/Users/deploy/AppData/Roaming/Playnite/config.json
+!/Users/deploy/AppData/Roaming/Playnite/fullscreenConfig.json
+!/Users/deploy/AppData/Roaming/Playnite/windowPositions.json
 
-# Defense in depth. These remain forbidden even if an allow rule is broadened.
+!/Users/deploy/AppData/Roaming/Parsec/
+!/Users/deploy/AppData/Roaming/Parsec/**
+
+# Defense in depth.
 **/.ssh/**
 **/Cache/**
 **/cache/**
@@ -73,21 +78,20 @@
 **/EA Desktop/**
 **/*.log
 **/*.log*
-
-# Parsec host session lives in Roaming even for the per-computer install.
-# Keep the whole overlay, including logs the global *.log rule would drop.
-!/AppData/Roaming/Parsec/**
+!/Users/deploy/AppData/Roaming/Parsec/**
 **/*.dmp
 **/*.tmp
 **/*.db
 **/*.sqlite*
 **/*.pem
 **/*.pfx
+!/Users/deploy/.config/apollo/credentials/
+!/Users/deploy/.config/apollo/credentials/*.pem
+/Users/deploy/AppData/Roaming/Parsec/lock
+/Users/deploy/AppData/Roaming/Parsec/lock_client
 
-# Apollo TLS pairing keys and client certs
-!/.config/apollo/credentials/
-!/.config/apollo/credentials/*.pem
-
-# Exclusive Parsec runtime locks; Git cannot open them while the host is up.
-/AppData/Roaming/Parsec/lock
-/AppData/Roaming/Parsec/lock_client
+# Machine git metadata lives at C:\, not under the user profile.
+/Users/deploy/.gitignore
+/Users/deploy/.gitattributes
+/Users/deploy/.githooks/
+/Users/deploy/.profile-git/
