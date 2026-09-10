@@ -1,0 +1,93 @@
+# This repository lives at C:\Users\deploy. Deny everything unless a stable,
+# reviewed configuration file is explicitly allowed below.
+/*
+!/.gitignore
+!/.gitattributes
+!/.githooks/
+!/.githooks/**
+!/.profile-git/
+!/.profile-git/**
+
+# Scoop preferences and user configurations (.config and dotfiles).
+!/.config/
+!/.config/**
+!/.sff/
+!/.sff/**
+
+# AppData is selective to prevent bloat. Only reviewed application configs are admitted.
+!/AppData/
+/AppData/*
+!/AppData/Local/
+/AppData/Local/*
+!/AppData/Local/FanControl/
+/AppData/Local/FanControl/*
+!/AppData/Local/FanControl/Configurations/
+/AppData/Local/FanControl/Configurations/*
+!/AppData/Local/FanControl/Configurations/userConfig.json
+
+!/AppData/Roaming/
+/AppData/Roaming/*
+!/AppData/Roaming/ludusavi/
+/AppData/Roaming/ludusavi/*
+!/AppData/Roaming/ludusavi/config.yaml
+
+!/AppData/Roaming/WizTree3/
+/AppData/Roaming/WizTree3/*
+!/AppData/Roaming/WizTree3/WizTree3.ini
+
+!/AppData/Roaming/Notepad++/
+/AppData/Roaming/Notepad++/*
+!/AppData/Roaming/Notepad++/config.xml
+!/AppData/Roaming/Notepad++/contextMenu.xml
+!/AppData/Roaming/Notepad++/langs.xml
+!/AppData/Roaming/Notepad++/shortcuts.xml
+!/AppData/Roaming/Notepad++/stylers.xml
+!/AppData/Roaming/Notepad++/plugins/
+/AppData/Roaming/Notepad++/plugins/*
+!/AppData/Roaming/Notepad++/plugins/Config/
+/AppData/Roaming/Notepad++/plugins/Config/*
+!/AppData/Roaming/Notepad++/plugins/Config/converter.ini
+
+!/AppData/Roaming/Playnite/
+/AppData/Roaming/Playnite/*
+!/AppData/Roaming/Playnite/config.json
+!/AppData/Roaming/Playnite/fullscreenConfig.json
+!/AppData/Roaming/Playnite/windowPositions.json
+
+!/AppData/Roaming/Parsec/
+!/AppData/Roaming/Parsec/**
+
+# Defense in depth. These remain forbidden even if an allow rule is broadened.
+**/.ssh/**
+**/Cache/**
+**/cache/**
+**/Logs/**
+**/logs/**
+**/Cookies*
+**/Login Data*
+**/Web Data*
+**/History*
+**/session.xml*
+**/loginusers.vdf
+**/Electronic Arts/**
+**/EA Desktop/**
+**/*.log
+**/*.log*
+
+# Parsec host session lives in Roaming even for the per-computer install.
+# Keep the whole overlay, including logs the global *.log rule would drop.
+!/AppData/Roaming/Parsec/**
+**/*.dmp
+**/*.tmp
+**/*.db
+**/*.sqlite*
+**/*.pem
+**/*.pfx
+
+# Apollo TLS pairing keys and client certs
+!/.config/apollo/credentials/
+!/.config/apollo/credentials/*.pem
+
+# Exclusive Parsec runtime locks; Git cannot open them while the host is up.
+/AppData/Roaming/Parsec/lock
+/AppData/Roaming/Parsec/lock_client

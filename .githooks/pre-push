@@ -1,0 +1,2 @@
+#!/bin/sh
+exec powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "$(git rev-parse --show-toplevel)/.profile-git/Audit-ProfileRepo.ps1" -Mode tracked
