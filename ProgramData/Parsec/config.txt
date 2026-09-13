@@ -1,0 +1,12 @@
+# Managed Parsec host configuration
+
+# Managed by Ansible
+app_host = 1
+app_run_level = 2
+host_prevent_sleep = 1
+host_virtual_monitors = 1
+encoder_bitrate = 30
+encoder_fps = 60
+net_upnp = 1
+server_resolution_x = 1920
+server_resolution_y = 1080

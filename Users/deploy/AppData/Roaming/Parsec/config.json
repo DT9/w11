@@ -1,0 +1,20 @@
+[
+	"See https://parsec.app/config for documentation and example. JSON must be valid before saving or file be will be erased.",
+	{
+		"app_changelog_ver": {
+			"value": 8
+		},
+		"app_channel": {
+			"value": "release11"
+		},
+		"app_run_level": {
+			"value": 1
+		},
+		"server_resolution_x": {
+			"value": 1920
+		},
+		"server_resolution_y": {
+			"value": 1200
+		}
+	}
+]

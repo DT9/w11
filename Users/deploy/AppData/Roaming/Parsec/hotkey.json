@@ -1,0 +1,67 @@
+{
+	"screen": {
+		"mod": 65,
+		"key": 22,
+		"global": false
+	},
+	"pen": {
+		"mod": 65,
+		"key": 19,
+		"global": false
+	},
+	"sas": {
+		"mod": 320,
+		"key": 77,
+		"global": false
+	},
+	"detach": {
+		"mod": 320,
+		"key": 29,
+		"global": false
+	},
+	"disconnect": {
+		"mod": 320,
+		"key": 53,
+		"global": false
+	},
+	"immersive": {
+		"mod": 65,
+		"key": 12,
+		"global": false
+	},
+	"menu": {
+		"mod": 65,
+		"key": 16,
+		"global": false
+	},
+	"display": {
+		"mod": 65,
+		"key": 7,
+		"global": false
+	},
+	"kick_all": {
+		"mod": 64,
+		"key": 60,
+		"global": true
+	},
+	"window_mode": {
+		"mod": 65,
+		"key": 26,
+		"global": false
+	},
+	"chat": {
+		"mod": 65,
+		"key": 6,
+		"global": false
+	},
+	"ignore": {
+		"mod": 0,
+		"key": 0,
+		"global": false
+	},
+	"accept_all": {
+		"mod": 64,
+		"key": 58,
+		"global": true
+	}
+}

@@ -1,0 +1,12 @@
+# NOTICE: From Parsec 150-89, the advanced configuration has moved to config.json
+# The config.json file located in the same folder as config.txt.
+# You can still add configuration to this file (config.txt) for backwards compatibility.
+# When you save this file (config.txt) and restart the app, configuration will be migrated to config.json.
+# This file (config.txt) will be cleared once the setting(s) have been saved and migrated.
+# All configuration settings must appear on a new line.
+# All whitespace, besides the newline character '\n', is ignored.
+# See https://parsec.app/config for more information.
+
+# Example:
+# encoder_bitrate = 10
+
